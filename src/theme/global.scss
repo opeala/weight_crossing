@@ -1,0 +1,112 @@
+// Global styles and Ionic theme variables. Tokens are injected by vite.config.ts.
+
+:root {
+  --ion-font-family: #{$font-body};
+  --ion-background-color: #{$grass};
+  --ion-text-color: #{$brown};
+
+  --ion-color-primary: #{$leaf};
+  --ion-color-primary-rgb: 63, 181, 106;
+  --ion-color-primary-contrast: #{$white};
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #{$leaf-dark};
+  --ion-color-primary-tint: #52c47a;
+
+  --ion-color-secondary: #{$blue};
+  --ion-color-secondary-rgb: 92, 184, 230;
+  --ion-color-secondary-contrast: #{$white};
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #{$blue-dark};
+  --ion-color-secondary-tint: #74c4ec;
+
+  --ion-color-warning: #{$orange};
+  --ion-color-danger: #{$red-soft};
+  --ion-color-danger-rgb: 224, 116, 90;
+  --ion-color-danger-contrast: #{$white};
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #c5664f;
+  --ion-color-danger-tint: #e3826b;
+}
+
+html,
+body {
+  background: $sky;
+}
+
+body {
+  font-family: $font-body;
+  color: $brown;
+}
+
+// Cozy styling for the alert dialogs (confirm delete, edit note).
+ion-alert.cozy-alert {
+  --background: #{$cream};
+  --max-width: 360px;
+
+  .alert-wrapper {
+    border-radius: $radius-card;
+    box-shadow: $shadow-card;
+  }
+
+  .alert-head {
+    text-align: center;
+  }
+
+  .alert-title {
+    font-family: $font-display;
+    font-weight: 800;
+    font-size: 22px;
+    color: $leaf-dark;
+  }
+
+  .alert-message {
+    color: $brown;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .alert-input-group {
+    padding-top: 8px;
+  }
+
+  .alert-input-wrapper textarea,
+  textarea.alert-input {
+    @include field;
+    min-height: 110px;
+    resize: none;
+  }
+
+  .alert-button-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 8px 16px 18px;
+  }
+
+  .alert-button-inner {
+    justify-content: center;
+  }
+
+  .alert-button {
+    @include chunky-button($leaf, $leaf-dark);
+    flex: 0 1 auto;
+    width: auto;
+    padding: 8px 18px;
+    font-size: 16px;
+    margin: 0;
+    border-right: 0 !important;
+    min-height: 0;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  .alert-button.alert-button-role-cancel {
+    @include chunky-button($cream-2, #e2d39f);
+    color: $brown;
+  }
+
+  .alert-button.danger {
+    @include chunky-button($red-soft, #c5664f);
+  }
+}

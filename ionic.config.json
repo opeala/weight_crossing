@@ -1,0 +1,5 @@
+{
+  "name": "weight-crossing",
+  "integrations": { "capacitor": {} },
+  "type": "vue-vite"
+}

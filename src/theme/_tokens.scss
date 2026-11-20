@@ -1,0 +1,84 @@
+// Design tokens. Injected into every component's <style lang="scss"> via vite.config.ts,
+// so this file must only contain variables, functions and mixins (no CSS output).
+
+// Palette
+$sky: #9fe0e8;
+$sky-2: #c8f0ec;
+$grass: #7fcf6a;
+$grass-dark: #5fb34d;
+$cream: #fdf8e4;
+$cream-2: #f6edc9;
+$brown: #7a5a3a;
+$brown-soft: #a88763;
+$leaf: #3fb56a;
+$leaf-dark: #2c9353;
+$orange: #f5a742;
+$orange-dark: #d4862a;
+$pink: #f79fb3;
+$blue: #5cb8e6;
+$blue-dark: #3a93c0;
+$red-soft: #e0745a;
+$white: #fff;
+
+// Type
+$font-display: 'Baloo 2', 'Nunito', system-ui, sans-serif;
+$font-body: 'Nunito', system-ui, sans-serif;
+
+// Shape
+$radius-card: 28px;
+$radius-field: 16px;
+$radius-pill: 999px;
+$shadow-card: 0 6px 0 rgba($brown, 0.18);
+
+// Breakpoints
+$bp-small: 560px;
+
+@mixin card {
+  background: $cream;
+  border-radius: $radius-card;
+  padding: 20px 22px 22px;
+  box-shadow: $shadow-card;
+}
+
+@mixin chunky-button($bg, $edge) {
+  font-family: $font-display;
+  font-weight: 800;
+  font-size: 17px;
+  border: 0;
+  border-radius: $radius-pill;
+  padding: 10px 22px;
+  cursor: pointer;
+  background: $bg;
+  color: $white;
+  box-shadow: 0 4px 0 $edge;
+  transition: transform 0.08s;
+  white-space: nowrap;
+
+  &:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 $edge;
+  }
+}
+
+@mixin field {
+  font: inherit;
+  color: $brown;
+  background: $white;
+  border: 3px solid $cream-2;
+  border-radius: $radius-field;
+  padding: 10px 12px;
+  width: 100%;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  &:focus {
+    border-color: $leaf;
+  }
+}
+
+@mixin small-screen {
+  @media (max-width: $bp-small) {
+    @content;
+  }
+}
